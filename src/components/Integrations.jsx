@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Database, Mail, Calendar, Headphones, Building2, Api } from 'lucide-react'
+import { Database, Mail, Calendar, Headphones, Building2, Server } from 'lucide-react'
 
 const logos = [
   { Icon: Building2, name: 'CRM' },
@@ -7,7 +7,7 @@ const logos = [
   { Icon: Mail, name: 'Email' },
   { Icon: Calendar, name: 'Calendar' },
   { Icon: Database, name: 'Data Warehouse' },
-  { Icon: Api, name: 'Internal APIs' },
+  { Icon: Server, name: 'Internal APIs' },
 ]
 
 function Integrations() {
