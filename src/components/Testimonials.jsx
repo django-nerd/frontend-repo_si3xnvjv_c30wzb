@@ -17,25 +17,25 @@ const quotes = [
 
 function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-20 md:py-28 bg-gradient-to-b from-[#F5FAF9] to-white">
+    <section id="testimonials" className="relative py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#273B4B]">Proven in the real world</h2>
-          <p className="mt-3 text-[#273B4B]/80">Teams across industries are using Amigaa to scale outcomes without scaling costs.</p>
+          <h2 className="text-3xl md:text-4xl font-bold">Proven in the real world</h2>
+          <p className="mt-3 text-white/70">Teams across industries are using Amigaa to scale outcomes without scaling costs.</p>
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {quotes.map((q, i) => (
             <motion.blockquote
               key={q.author}
-              className="rounded-2xl bg-white border border-[#273B4B]/10 p-6 shadow-[0_10px_40px_-10px_rgba(0,120,111,0.15)]"
+              className="rounded-2xl p-6 glass ring-glow"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
             >
-              <p className="text-[#273B4B] text-base leading-relaxed">“{q.quote}”</p>
-              <footer className="mt-4 text-sm font-medium text-[#273B4B]/70">{q.author}</footer>
+              <p className="text-white text-base leading-relaxed">“{q.quote}”</p>
+              <footer className="mt-4 text-sm font-medium text-white/70">{q.author}</footer>
             </motion.blockquote>
           ))}
         </div>

@@ -17,26 +17,27 @@ const steps = [
 
 function HowItWorks() {
   return (
-    <section id="how" className="relative py-20 md:py-28 bg-gradient-to-b from-white to-[#F5FAF9]">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="how" className="relative py-20 md:py-28">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.08] bg-[radial-gradient(600px_200px_at_20%_20%,#00e0c7,transparent),radial-gradient(600px_200px_at_80%_80%,#00786F,transparent)]" />
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
         <div className="max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#273B4B]">How it works</h2>
-          <p className="mt-3 text-[#273B4B]/80">From connection to outcomes in three simple steps.</p>
+          <h2 className="text-3xl md:text-4xl font-bold">How it works</h2>
+          <p className="mt-3 text-white/70">From connection to outcomes in three simple steps.</p>
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {steps.map((s, i) => (
             <motion.div
               key={s.title}
-              className="relative rounded-2xl bg-white border border-[#273B4B]/10 p-6 shadow-[0_10px_40px_-10px_rgba(39,59,75,0.18)]"
+              className="relative rounded-2xl p-6 glass ring-glow"
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.45, delay: i * 0.06 }}
             >
-              <div className="absolute -top-3 left-6 h-6 w-6 rounded-md bg-[#00786F] text-white text-xs font-bold flex items-center justify-center shadow">{i + 1}</div>
-              <h3 className="mt-2 text-xl font-semibold text-[#273B4B]">{s.title}</h3>
-              <p className="mt-2 text-[#273B4B]/80">{s.desc}</p>
+              <div className="absolute -top-3 left-6 h-6 w-6 rounded-md bg-teal-400 text-[#0b1116] text-xs font-bold flex items-center justify-center shadow">{i + 1}</div>
+              <h3 className="mt-2 text-xl font-semibold">{s.title}</h3>
+              <p className="mt-2 text-white/70">{s.desc}</p>
             </motion.div>
           ))}
         </div>

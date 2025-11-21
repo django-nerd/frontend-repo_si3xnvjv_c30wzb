@@ -12,26 +12,26 @@ function Navbar() {
   ]
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/50 bg-white/70 border-b border-slate-200/60">
+    <header className="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-[#0b1116]/70 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <a href="#" className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-[#00786F] shadow-inner shadow-[#273B4B]/30" />
-            <span className="text-lg font-semibold tracking-tight text-[#273B4B]">Amigaa</span>
+            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-[#00b3a5] to-[#00786F] ring-glow" />
+            <span className="text-lg font-semibold tracking-tight">Amigaa</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <a key={item.href} href={item.href} className="text-sm font-medium text-[#273B4B]/80 hover:text-[#00786F] transition-colors">
+              <a key={item.href} href={item.href} className="text-sm font-medium text-white/70 hover:text-white transition-colors">
                 {item.label}
               </a>
             ))}
-            <a href="#cta" className="inline-flex items-center justify-center rounded-lg bg-[#00786F] text-white px-4 py-2 text-sm font-semibold shadow-sm hover:shadow-md hover:brightness-105 transition-all">
+            <a href="#cta" className="btn-accent shadow-md">
               Get started
             </a>
           </nav>
 
-          <button className="md:hidden p-2 rounded-md text-[#273B4B]" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+          <button className="md:hidden p-2 rounded-md text-white" onClick={() => setOpen(!open)} aria-label="Toggle menu">
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
@@ -40,11 +40,11 @@ function Navbar() {
           <div className="md:hidden pb-4">
             <div className="grid gap-2">
               {navItems.map((item) => (
-                <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="rounded-md px-3 py-2 text-[#273B4B] hover:bg-[#273B4B]/5">
+                <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="rounded-md px-3 py-2 text-white/90 hover:bg-white/5">
                   {item.label}
                 </a>
               ))}
-              <a href="#cta" onClick={() => setOpen(false)} className="rounded-md px-3 py-2 bg-[#00786F] text-white text-center font-semibold">
+              <a href="#cta" onClick={() => setOpen(false)} className="btn-accent text-center">
                 Get started
               </a>
             </div>

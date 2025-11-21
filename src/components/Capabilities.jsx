@@ -26,28 +26,31 @@ const items = [
 
 function Capabilities() {
   return (
-    <section id="capabilities" className="relative py-20 md:py-28 bg-white">
+    <section id="capabilities" className="relative py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#273B4B]">What Amigaa can do</h2>
-          <p className="mt-3 text-[#273B4B]/80">A coordinated multi-agent system specialized for modern businesses.</p>
+          <h2 className="text-3xl md:text-4xl font-bold">What Amigaa can do</h2>
+          <p className="mt-3 text-white/70">A coordinated multi-agent system specialized for modern businesses.</p>
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {items.map(({ icon: Icon, title, desc }, i) => (
             <motion.div
               key={title}
-              className="group rounded-2xl border border-[#273B4B]/10 bg-gradient-to-b from-white to-white/80 p-6 shadow-[0_10px_40px_-10px_rgba(0,120,111,0.15)] hover:shadow-[0_14px_50px_-8px_rgba(0,120,111,0.25)] transition-shadow"
+              className="group relative rounded-2xl p-6 glass ring-glow overflow-hidden"
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
             >
-              <div className="h-10 w-10 rounded-lg flex items-center justify-center bg-[#00786F]/10 text-[#00786F]">
+              <div className="absolute -top-16 -right-10 h-40 w-40 rounded-full blur-2xl opacity-20"
+                   style={{ background: 'radial-gradient(circle, rgba(0,224,199,0.35), transparent 60%)' }} />
+
+              <div className="h-10 w-10 rounded-lg flex items-center justify-center bg-teal-500/15 text-teal-300">
                 <Icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-[#273B4B]">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#273B4B]/80">{desc}</p>
+              <h3 className="mt-4 text-lg font-semibold">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/70">{desc}</p>
             </motion.div>
           ))}
         </div>
